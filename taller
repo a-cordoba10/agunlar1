@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 function calcular() {
-    var x, y;
+    var x, y,z;
     x = document.getElementById("valor1").value;
     y = document.getElementById("valor2").value;
     z = document.getElementById("valor3").value;
