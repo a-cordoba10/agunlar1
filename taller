@@ -1,0 +1,63 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+function calcular() {
+    var x, y;
+    x = document.getElementById("valor1").value;
+    y = document.getElementById("valor2").value;
+    z = document.getElementById("valor3").value;
+
+    if (isNaN(x)) {
+        document.getElementById("msj").innerHTML = "<div class=\"alert alert-danger\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times</a>El valor 1 debe ser un nÃºmero</div>";
+    }
+    else if (isNaN(y)) {
+        document.getElementById("msj").innerHTML = "<div class=\"alert alert-danger\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times</a>El valor 2 debe ser un nÃºmero</div>";
+    }
+    else if (isNaN(z)) {
+        document.getElementById("msj").innerHTML = "<div class=\"alert alert-danger\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times</a>El valor 3 debe ser un nÃºmero</div>";
+    }
+    else
+    {
+        var rta = parseInt(x) + parseInt(y)+ parseInt(z);
+        document.getElementById("msj").innerHTML = "<div class=\"alert alert-success\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times</a>La respuesta es: " + rta + "</div>";
+        ;
+    }
+}
+
+ function concatenar() {
+    var x, y, z;
+    x = document.getElementById("valor1").value;
+    y = document.getElementById("valor2").value;
+    z = document.getElementById("valor3").value;
+    
+    var arreglo = [x, y, z];
+    var cota=0;
+    while (cota<2)
+    {
+        cota = 0;
+         for(var i= 0; i<2;i++)
+        {
+            var temp = arreglo[i];  
+            var temp2 = arreglo[i+1];    
+             
+             if(temp<temp2)
+            {    
+                arreglo[i]= temp2;
+                arreglo[i+1]=temp;
+                
+            }
+            else
+            {
+                cota+=1;
+            }
+        }
+    }
+    
+    var rta = "La respuesta es:  " + arreglo[0]+arreglo[1]+arreglo[2];
+        document.getElementById("msj").innerHTML = "<div class=\"alert alert-success\"> <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times</a>La respuesta es: " + rta + "</div>";
+    
+    
+    
+    }
